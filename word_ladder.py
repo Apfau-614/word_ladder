@@ -61,7 +61,7 @@ def load_dict(path='words5.dict'):
     with open(path) as f:
         return {line.strip() for line in f}
 
-WORDS = load_dict
+WORDS = load_dict()
 
 
 def verify_word_ladder(ladder):
