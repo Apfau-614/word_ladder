@@ -55,7 +55,7 @@ def word_ladder(start_word, end_word, dictionary_file='words5.dict'):
                 queue.append(copy)
                 words.remove(word)
 
-            return None
+    return None
 
 def load_dict(path='words5.dict'):
     with open(path) as f:
