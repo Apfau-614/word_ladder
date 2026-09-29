@@ -35,7 +35,7 @@ def word_ladder(start_word, end_word, dictionary_file='words5.dict'):
     '''
     words = load_dict(dictionary_file)
     if start_word not in words or end_word not in words:
-        return "Word DNE"
+        return None
     if start_word == end_word:
         return [start_word]
     words.remove(start_word)
