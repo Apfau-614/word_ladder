@@ -74,7 +74,8 @@ def verify_word_ladder(ladder):
     >>> verify_word_ladder(['stone', 'shone', 'phony'])
     False
     '''
-
+    if not ladder:
+        return False
     if not all(word in WORDS for word in ladder):
         return False
     return all(_adjacent(word1, word2) for word1, word2 in zip(ladder, ladder[1:]))
