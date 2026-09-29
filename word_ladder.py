@@ -47,7 +47,7 @@ def word_ladder(start_word, end_word, dictionary_file='words5.dict'):
     while queue:
         stack = queue.popleft()
         for word in list(words):
-            if_adjacent(word, stack[-1]):
+            if_adjacent(word, stack[-1])
                 if word == end_word:
                     return stack + [word]
                 copy = stack[:]
