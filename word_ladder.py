@@ -77,7 +77,7 @@ def verify_word_ladder(ladder):
 
     if not all(word in WORDS for word in ladder):
         return False
-    return all(is_adjacent(word1, word2) for word1, word2 in zip(ladder, ladder[1:]))
+    return all(_adjacent(word1, word2) for word1, word2 in zip(ladder, ladder[1:]))
 
 def _adjacent(word1, word2):
     '''
