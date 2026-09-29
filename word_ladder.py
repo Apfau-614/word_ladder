@@ -33,6 +33,13 @@ def word_ladder(start_word, end_word, dictionary_file='words5.dict'):
     '''
 
 
+def load_dict(path='words5.dict'):
+    with open(path) as f:
+        return {line.strip() for line in f}
+
+WORDS = load_dict
+
+
 def verify_word_ladder(ladder):
     '''
     Returns True if each entry of the input list is adjacent to its neighbors;
@@ -44,6 +51,9 @@ def verify_word_ladder(ladder):
     False
     '''
 
+    if not all(word in WORDS for word in ladder):
+        return False
+    return all(is_adjacent(word1, word2) for word1, word2 in zip(ladder, ladder[1:]))
 
 def _adjacent(word1, word2):
     '''
@@ -55,3 +65,4 @@ def _adjacent(word1, word2):
     >>> _adjacent('stone','money')
     False
     '''
+    return len(word1) == len(word2) and sum(x != y for x, y in zip(word1, word2)) == 1
